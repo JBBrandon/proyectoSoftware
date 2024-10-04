@@ -16,7 +16,7 @@ Route::controller(TutoriaController::class)->group(function () {
     // Página principal de gestión de tutorías
     Route::get('tutorias', 'index');
     Route::get('tutorias/induccion', 'induccion');
-    Route::get('tutorias/plan', 'verPlan');
+    Route::get('tutorias/plan', 'verPlan')->name('tutorias.verPlan');
     Route::get('tutorias/reuniones', 'verReuniones');
     Route::get('tutorias/seguimiento', 'verSeguimiento');
     
