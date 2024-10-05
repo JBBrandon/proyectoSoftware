@@ -8,7 +8,8 @@
 
     <h1>Se encontro el registro: {{$tutores->nombre}}</h1>
     <a href="{{route('tutorias.index')}}">Volver a Tutoria</a>
-    <p><strong>Código: {{$tutores->idTutores}}</p>
+    <a href="{{route('tutorias.edit', $tutores)}}">Editar registro</a>
+    <p><strong>Código: {{$tutores->idTutores}}</strong></p>
     
     
 @endsection

@@ -16,8 +16,13 @@ Route::controller(TutoriaController::class)->group(function () {
     // Página principal de gestión de tutorías
     Route::get('tutorias', 'index')->name('tutorias.index');
     Route::get('tutorias/create', 'create')->name('tutorias.create');
-    Route::get('tutorias/{id}', 'show')->name('tutorias.show');
 
+    //ruta para guardar  lo escrito en el formulario
+    Route::post('tutorias', 'store')->name('tutorias.store');
+
+    Route::get('tutorias/{tutores}', 'show')->name('tutorias.show');
+    Route::get('tutorias/{tutores}/edit', 'edit')->name('tutorias.edit');
+    Route::put('tutorias/{tutores}', 'update')->name('tutorias.update');
 
 
 });

@@ -1,23 +1,35 @@
-<!-- resources/views/tutorias/induccion.blade.php -->
+
 @extends('layouts.plantilla')
 
-@section('titulo', 'Inducción a los Tutores')
+@section('titulo', 'Registrar nuevo Tutor')
 
 @section('contenido')
-    <link rel="stylesheet" href="{{ asset('css/Induccion.css') }}">
-    <h2>Inducción a los Tutores</h2>
-    <form action="/tutorias/guardarInduccion" method="POST">
+    <link rel="stylesheet" href="{{ asset('css/createTutor.css') }}">
+
+    <h1>Registrar un nuevo Tutor</h1>
+
+    <form action="{{ route('tutorias.store') }}" method="POST">
         @csrf
+
+        <!-- Campo para el código idTutores --> 
+        <label for="idTutores">Código del Tutor:</label>
+        <input type="text" id="idTutores" name="idTutores" required><br><br>
+
+        <!-- Campo para el nombre del tutor -->
         <label for="nombre">Nombre del Tutor:</label>
         <input type="text" id="nombre" name="nombre" required><br><br>
 
-        <label for="fecha_induccion">Fecha de Inducción:</label>
-        <input type="date" id="fecha_induccion" name="fecha_induccion" required><br><br>
+        <!-- Campo para el email del tutor -->
+        <label for="email">Email del Tutor:</label>
+        <input type="email" id="email" name="email" required><br><br>
 
-        <label for="contenido">Contenido de la Inducción:</label>
-        <textarea id="contenido" name="contenido" rows="4" cols="50" required></textarea><br><br>
+        <!-- Campo para el teléfono del tutor -->
+        <label for="telefono">Teléfono del Tutor:</label>
+        <input type="text" id="telefono" name="telefono" required><br><br>
 
-        <button type="submit">Guardar Inducción</button>
+        <!-- Botón para guardar el formulario -->
+        <button type="submit">Registrar Tutor</button>
     </form>
 @endsection
+
 
