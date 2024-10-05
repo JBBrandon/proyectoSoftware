@@ -17,8 +17,8 @@ Route::controller(TutoriaController::class)->group(function () {
     Route::get('tutorias', 'index')->name('tutorias.index');
     Route::get('tutorias/create', 'create');
     Route::get('tutorias/{id}', 'show')->name('tutorias.show');
-    Route::get('tutorias/reuniones', 'verReuniones');
-    Route::get('tutorias/seguimiento', 'verSeguimiento');
+
+
     
 });
 
