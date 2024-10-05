@@ -14,42 +14,13 @@ class TutoriaController extends Controller
         return view('tutorias.index',compact('tutores'));
     }
 
-    // Inducción a los tutores
-    public function induccion() {
-        return view('tutorias.induccion');
+    public function create(){
+        return view('tutorias.create');
     }
 
-    public function guardarInduccion(Request $request) {
-        //  guardar inducción de tutores
-        return view('tutorias.guardarInduccion');
-    }
-
-    // Informe de Plan de tutoría
-    public function verPlan() {
-        return view('tutorias.verPlan');
-    }
-
-    public function guardarPlan(Request $request) {
-        //  para guardar el plan de tutoría
-        return view('tutorias.guardarPlan');
-    }
-
-    // Reuniones de tutoría personalizada
-    public function verReuniones() {
-        return view('tutorias.verReuniones');
-    }
-
-    public function agendarReunion(Request $request) {
-        //  para agendar una reunión
-        return view('tutorias.agendarReunion');
-    }
-
-    // Informes de seguimiento académico
-    public function verSeguimiento() {
-        return view('tutorias.verSeguimiento');
-    }
-    public function guardarSeguimiento(Request $request) {
-        // para guardar informes de seguimiento académico
-        return view('tutorias.guardarSeguimiento');
+    public function show($id) {
+    
+        $tutores = Tutor::find($id);
+        return view('tutorias.show' , compact('tutores'));   
     }
 }

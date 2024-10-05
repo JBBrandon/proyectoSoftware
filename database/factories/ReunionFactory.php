@@ -15,6 +15,7 @@ class ReunionFactory extends Factory
     public function definition(): array
     {
         return [
+            'idReuniones'=> $this->faker->unique()->randomNumber(),
             'tutor_id' => Tutor::factory(),  // Generar un tutor de prueba
             'estudiante_id' => Estudiante::factory(),  // Generar un estudiante de prueba
             'fecha_reunion' => $this->faker->date(),

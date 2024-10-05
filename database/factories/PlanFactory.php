@@ -14,6 +14,7 @@ class PlanFactory extends Factory
     public function definition(): array
     {
         return [
+            'idPlanes'=> $this->faker->unique()->randomNumber(),
             'titulo' => $this->faker->sentence(),
             'descripcion' => $this->faker->paragraph(),
             'estado' => $this->faker->randomElement(['Activo', 'Inactivo']),

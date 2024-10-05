@@ -15,6 +15,7 @@ class SeguimientoFactory extends Factory
     protected $model = Seguimiento::class;
     public function definition(): array
     {  return [
+            'idSeguimientos'=> $this->faker->unique()->randomNumber(),
             'tutor_id' => Tutor::factory(),  // Generar un tutor de prueba
             'estudiante_id' => Estudiante::factory(),  // Generar un estudiante de prueba
             'informe' => $this->faker->paragraph(),

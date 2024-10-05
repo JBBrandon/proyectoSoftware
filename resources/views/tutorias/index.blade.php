@@ -8,10 +8,13 @@
     
     <h2>Bienvenido a la página principal de Gestión de Tutorías</h2>
     <p>Desde aquí puedes gestionar las funciones de tutoría.</p>
-    <a href="{{route('tutorias.verPlan')}}">Nuevo registro</a>
+
+    <a href="{{route('tutorias.create')}}">Nuevo registro</a>
     <ul>
         @foreach($tutores as $Tutor)
-            <li>{{$Tutor->nombre}}</li>
+            <li>
+             <a href="{{route('tutorias.show' , $Tutor->id)}}">{{$Tutor->nombre}}</a>
+            </li>
         @endforeach
     </ul>
     {{$tutores->links()}}

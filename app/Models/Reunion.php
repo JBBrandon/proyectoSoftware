@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reunion extends Model
 {
-    protected $table ='reuniones';
+    protected $table = 'reuniones';
     use HasFactory;
 }

@@ -15,6 +15,7 @@ class EstudianteFactory extends Factory
     public function definition(): array
     {
         return [
+            'idEstudiantes'=> $this->faker->unique()->randomNumber(),
             'nombre' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'telefono' => $this->faker->phoneNumber(),
