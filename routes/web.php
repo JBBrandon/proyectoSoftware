@@ -15,11 +15,11 @@ Route::get('/', function () {
 Route::controller(TutoriaController::class)->group(function () {
     // Página principal de gestión de tutorías
     Route::get('tutorias', 'index')->name('tutorias.index');
-    Route::get('tutorias/create', 'create');
+    Route::get('tutorias/create', 'create')->name('tutorias.create');
     Route::get('tutorias/{id}', 'show')->name('tutorias.show');
 
 
-    
+
 });
 
 

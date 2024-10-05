@@ -12,11 +12,12 @@
         <h1>Gestión de Tutorías</h1>
         <nav>
             <ul>
-                <li><a href="/tutorias">Inicio</a></li>
-                <li><a href="/tutorias/induccion">Inducción</a></li>
-                <li><a href="/tutorias/plan">Plan de Tutoría</a></li>
-                <li><a href="/tutorias/reuniones">Reuniones</a></li>
-                <li><a href="/tutorias/seguimiento">Seguimiento</a></li>
+                <li><a href="{{ route('tutorias.index') }}">Inicio</a></li>
+                <li><a href="{{ route('tutorias.create') }}">Crear Plan de Tutoría</a></li>
+                <li><a href="{{ route('tutorias.show', 1) }}">Ver Plan de Tutoría</a></li>
+                <!-- Las siguientes rutas deberías definirlas en tu archivo web.php -->
+                <li><a href="#">Reuniones</a></li>
+                <li><a href="#">Seguimiento</a></li>
             </ul>
         </nav>
     </header>
