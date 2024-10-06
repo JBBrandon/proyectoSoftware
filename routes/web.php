@@ -52,29 +52,29 @@ Route::controller(ReunionController::class)->group(function () {
 });
 
 
-// Rutas de TUTORES agrupadas en un controlador
+// Rutas de Seguimiento agrupadas en un controlador
 Route::controller(SeguimientoController::class)->group(function () {
     // Página principal de gestión de tutorías
-    Route::get('seguimiento', 'index')->name('seguimiento.index');
-    Route::get('seguimiento/create', 'create')->name('seguimiento.create');
+    Route::get('seguimientos', 'index')->name('seguimientos.index');
+    Route::get('seguimientos/create', 'create')->name('seguimientos.create');
 
     //ruta para guardar  lo escrito en el formulario
-    Route::post('seguimiento', 'store')->name('seguimiento.store');
-    Route::get('seguimiento/{next}', 'show')->name('seguimiento.show');
-    Route::get('seguimiento/{next}/edit', 'edit')->name('seguimiento.edit');
-    Route::put('seguimiento/{next}', 'update')->name('seguimento.update');
+    Route::post('seguimientos', 'store')->name('seguimientos.store');
+    Route::get('seguimientos/{seguimiento}', 'show')->name('seguimientos.show');
+    Route::get('seguimientos/{seguimiento}/edit', 'edit')->name('seguimientos.edit');
+    Route::put('seguimientos/{seguimiento}', 'update')->name('seguimientos.update');
 });
 
-// Rutas de TUTORES agrupadas en un controlador
+// Rutas de Estudiantes agrupadas en un controlador
 Route::controller(EstudianteController::class)->group(function () {
     // Página principal de gestión de tutorías
-    Route::get('estudiante', 'index')->name('estudiante.index');
-    Route::get('estudiante/create', 'create')->name('estudiante.create');
+    Route::get('estudiantes', 'index')->name('estudiantes.index');
+    Route::get('estudiantes/create', 'create')->name('estudiantes.create');
 
     //ruta para guardar  lo escrito en el formulario
-    Route::post('estudiante', 'store')->name('estudiante.store');
-    Route::get('estudiante/{escol}', 'show')->name('estudiante.show');
-    Route::get('estudiante/{escol}/edit', 'edit')->name('estudiante.edit');
-    Route::put('estudiante/{escol}', 'update')->name('estudiante.update');
+    Route::post('estudiantes', 'store')->name('estudiantes.store');
+    Route::get('estudiantes/{estudiante}', 'show')->name('estudiantes.show');
+    Route::get('estudiantes/{estudiante}/edit', 'edit')->name('estudiantes.edit');
+    Route::put('estudiantes/{estudiante}', 'update')->name('estudiantes.update');
 });
 
