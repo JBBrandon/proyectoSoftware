@@ -1,4 +1,3 @@
-<!-- resources/views/layouts/plantilla.blade.php -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,11 +12,10 @@
         <nav>
             <ul>
                 <li><a href="{{ route('tutorias.index') }}">Inicio</a></li>
-                <li><a href="{{ route('tutorias.create') }}">Crear Plan de Tutoría</a></li>
-                <li><a href="{{ route('tutorias.show', 1) }}">Ver Plan de Tutoría</a></li>
-                <!-- Las siguientes rutas deberías definirlas en tu archivo web.php -->
-                <li><a href="#">Reuniones</a></li>
-                <li><a href="#">Seguimiento</a></li>
+                <li><a href="{{ route('planes.index') }}">Plan de Tutoría</a></li>
+                <li><a href="{{ route('reunion.index') }}">Reuniones</a></li>
+                <li><a href="{{ route('seguimiento.index') }}">Seguimiento</a></li>
+                <li><a href="{{ route('estudiante.index') }}">Estudiantes</a></li>
             </ul>
         </nav>
     </header>
@@ -31,3 +29,4 @@
     </footer>
 </body>
 </html>
+
