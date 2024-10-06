@@ -13,7 +13,7 @@
             <ul>
                 <li><a href="{{ route('tutorias.index') }}">Inicio</a></li>
                 <li><a href="{{ route('planes.index') }}">Plan de Tutoría</a></li>
-                <li><a href="{{ route('reunion.index') }}">Reuniones</a></li>
+                <li><a href="{{ route('reuniones.index') }}">Reuniones</a></li>
                 <li><a href="{{ route('seguimiento.index') }}">Seguimiento</a></li>
                 <li><a href="{{ route('estudiante.index') }}">Estudiantes</a></li>
             </ul>

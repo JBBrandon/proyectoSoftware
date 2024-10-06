@@ -41,18 +41,16 @@ Route::controller(PlanController::class)->group(function () {
     Route::put('planes/{plan}', 'update')->name('planes.update');
 });
 
-// Rutas de TUTORES agrupadas en un controlador
+// Rutas de Reunion agrupadas en un controlador
 Route::controller(ReunionController::class)->group(function () {
-    // Página principal de gestión de tutorías
-    Route::get('reunion', 'index')->name('reunion.index');
-    Route::get('reunion/create', 'create')->name('reunion.create');
-
-    //ruta para guardar  lo escrito en el formulario
-    Route::post('reunion', 'store')->name('reunion.store');
-    Route::get('reunion/{reu}', 'show')->name('reunion.show');
-    Route::get('reunion/{reu}/edit', 'edit')->name('reunion.edit');
-    Route::put('reunion/{reu}', 'update')->name('reunion.update');
+    Route::get('reuniones', 'index')->name('reuniones.index');
+    Route::get('reuniones/create', 'create')->name('reuniones.create');
+    Route::post('reuniones', 'store')->name('reuniones.store');
+    Route::get('reuniones/{reu}', 'show')->name('reuniones.show');
+    Route::get('reuniones/{reu}/edit', 'edit')->name('reuniones.edit');
+    Route::put('reuniones/{reu}', 'update')->name('reuniones.update');
 });
+
 
 // Rutas de TUTORES agrupadas en un controlador
 Route::controller(SeguimientoController::class)->group(function () {

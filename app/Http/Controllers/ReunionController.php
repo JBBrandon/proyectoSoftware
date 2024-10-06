@@ -2,63 +2,83 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reunion;
 use Illuminate\Http\Request;
 
 class ReunionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // Página principal de reuniones
     public function index()
     {
-        //
+        $reuniones = Reunion::orderBy('id', 'desc')->paginate();
+        return view('reuniones.index', compact('reuniones'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    // Mostrar el formulario para crear una nueva reunión
     public function create()
     {
-        //
+        return view('reuniones.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    // Guardar los datos de la nueva reunión en la base de datos
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'idReuniones' => 'required|unique:reuniones',
+            'tutor_id' => 'required|integer',
+            'estudiante_id' => 'required|integer',
+            'fecha_reunion' => 'required|date',
+            'detalles' => 'required|string',
+            'estado' => 'required|string|max:255',
+        ]);
+
+        $reunion = new Reunion();
+        $reunion->idReuniones = $request->idReuniones;
+        $reunion->tutor_id = $request->tutor_id;
+        $reunion->estudiante_id = $request->estudiante_id;
+        $reunion->fecha_reunion = $request->fecha_reunion;
+        $reunion->detalles = $request->detalles;
+        $reunion->estado = $request->estado;
+    
+        $reunion->save();
+
+        return redirect()->route('reuniones.show', $reunion);
+    }    
+    // Mostrar los detalles de una reunión específica
+    public function show($id)
+    {
+        $reuniones = Reunion::find($id);
+        return view('reuniones.show', compact('reuniones'));
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    // Mostrar el formulario para editar una reunión existente
+    public function edit($id)
     {
-        //
+        $reunion = Reunion::find($id);
+        return view('reuniones.edit', compact('reunion'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    // Actualizar los datos de una reunión existente
+    public function update(Request $request, Reunion $reunion)
     {
-        //
-    }
+        $request->validate([
+            'idReuniones' => 'required|unique:reuniones,idReuniones,' ,
+            'tutor_id' => 'required|integer',
+            'estudiante_id' => 'required|integer',
+            'fecha_reunion' => 'required|date',
+            'detalles' => 'required|string',
+            'estado' => 'required|string|max:255',
+        ]);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+        $reunion = new Reunion ;
+        $reunion->idReuniones = $request->idReuniones;
+        $reunion->tutor_id = $request->tutor_id;
+        $reunion->estudiante_id = $request->estudiante_id;
+        $reunion->fecha_reunion = $request->fecha_reunion;
+        $reunion->detalles = $request->detalles;
+        $reunion->estado = $request->estado;
+        $reunion->save();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return redirect()->route('reuniones.show', $reunion);
     }
 }
