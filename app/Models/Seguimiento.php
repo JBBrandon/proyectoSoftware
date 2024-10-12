@@ -17,4 +17,15 @@ class Seguimiento extends Model
     ];
     
     use HasFactory;
+     // Relación inversa con el tutor (Muchos seguimientos pertenecen a un tutor)
+     public function tutor()
+     {
+         return $this->belongsTo(Tutor::class);
+     }
+ 
+     // Relación inversa con el estudiante (Muchos seguimientos pertenecen a un estudiante)
+     public function estudiante()
+     {
+         return $this->belongsTo(Estudiante::class);
+     }
 }

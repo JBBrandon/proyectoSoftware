@@ -25,6 +25,7 @@ Route::controller(TutoriaController::class)->group(function () {
     Route::get('tutorias/{tutores}', 'show')->name('tutorias.show');
     Route::get('tutorias/{tutores}/edit', 'edit')->name('tutorias.edit');
     Route::put('tutorias/{tutores}', 'update')->name('tutorias.update');
+    Route::put('tutorias/{tutores}', 'destroy')->name('tutorias.destroy');
 });
 
 // Rutas de PLANES agrupadas en un controlador

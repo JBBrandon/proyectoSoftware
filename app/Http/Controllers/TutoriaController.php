@@ -65,4 +65,9 @@ class TutoriaController extends Controller
     public function edit(Tutor $tutores){
         return view('tutorias.edit', compact('tutores'));
     }
+
+    public function destroy(Tutor $tutores){
+        $tutores->delete();
+        return redirect()->route('tutorias.index');
+    }
 }

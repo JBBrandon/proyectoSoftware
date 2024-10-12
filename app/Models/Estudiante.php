@@ -15,4 +15,16 @@ class Estudiante extends Model
         'telefono',
     ];
     use HasFactory;
+
+    // Relación uno a muchos con seguimientos (Un estudiante tiene muchos seguimientos)
+    public function seguimientos()
+    {
+        return $this->hasMany(Seguimiento::class);
+    }
+
+    // Relación uno a muchos con reuniones (Un estudiante tiene muchas reuniones)
+    public function reuniones()
+    {
+        return $this->hasMany(Reunion::class);
+    }
 }

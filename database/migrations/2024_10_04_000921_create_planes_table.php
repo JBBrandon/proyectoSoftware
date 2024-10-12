@@ -13,14 +13,15 @@ return new class extends Migration
     {
         Schema::create('planes', function (Blueprint $table) {
             $table->id();
-
-            $table->string('idPlanes')->uique();
+            $table->string('idPlanes');
             $table->string('titulo');
-            $table->text('descripcion')->nullable();
+            $table->text('descripcion');
             $table->string('estado');
-            $table->unsignedBigInteger('tutor_id');
+            $table->foreignId('tutor_id')->constrained('tutores')->onDelete('cascade'); // Esto genera una columna bigint(20) unsigned
             $table->timestamps();
         });
+        
+        
     }
 
     /**

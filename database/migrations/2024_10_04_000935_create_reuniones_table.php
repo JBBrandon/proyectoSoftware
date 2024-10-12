@@ -14,15 +14,14 @@ return new class extends Migration
         Schema::create('reuniones', function (Blueprint $table) {
             $table->id();
             $table->string('idReuniones');
-            $table->unsignedBigInteger('tutor_id');
-            $table->unsignedBigInteger('estudiante_id');
+            $table->foreignId('tutor_id')->constrained('tutores')->onDelete('cascade');
+            $table->foreignId('estudiante_id')->constrained('estudiantes')->onDelete('cascade');
             $table->date('fecha_reunion');
-            $table->text('detalles')->nullable();
+            $table->text('detalles');
             $table->string('estado');
             $table->timestamps();
-    
-           
         });
+        
     }
 
     /**
