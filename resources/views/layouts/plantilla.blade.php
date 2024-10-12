@@ -8,10 +8,12 @@
 </head>
 <body>
     <header>
-        <h1>Gestión de Tutorías</h1>
+        <h1>Universidad Continental</h1>
         <nav>
             <ul>
-                <li><a href="{{ route('tutorias.index') }}">Inicio</a></li>
+                <li><a href="{{ route('home') }}">Home</a></li>
+                <li><a href="{{ route('nosotros') }}">nosotro</a></li>
+                <li><a href="{{ route('tutorias.index') }}">Tutores</a></li>
                 <li><a href="{{ route('planes.index') }}">Plan de Tutoría</a></li>
                 <li><a href="{{ route('reuniones.index') }}">Reuniones</a></li>
                 <li><a href="{{ route('seguimientos.index') }}">Seguimiento</a></li>

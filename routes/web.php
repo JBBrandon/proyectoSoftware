@@ -8,12 +8,11 @@ use App\Http\Controllers\ReunionController;
 use App\Http\Controllers\SeguimientoController;
 use App\Http\Controllers\PlanController;
 
-Route::get('/', HomeController::class); 
+Route::get('/', HomeController::class)->name('home');
+Route::view('nosotros','nosotros')->name('nosotros'); 
 
-Route::get('/', function () {
-    // return view('welcome');
-    return "Bienvenido a la página principal de Gestión de Tutorías";
-});
+
+
 
 // Rutas de TUTORES agrupadas en un controlador
 Route::controller(TutoriaController::class)->group(function () {
