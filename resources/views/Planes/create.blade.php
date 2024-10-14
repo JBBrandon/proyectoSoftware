@@ -1,5 +1,7 @@
 <!-- resources/views/planes/create.blade.php -->
+@extends('adminlte::page')
 @extends('layouts.plantilla')
+
 
 @section('titulo', 'Crear Plan')
 

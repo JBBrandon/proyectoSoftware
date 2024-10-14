@@ -1,4 +1,5 @@
 <!-- resources/views/tutorias/verPlan.blade.php -->
+@extends('adminlte::page')
 @extends('layouts.plantilla')
 
 @section('titulo', 'Ver Plan de Tutoría')

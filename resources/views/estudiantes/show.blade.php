@@ -1,3 +1,5 @@
+
+@extends('adminlte::page')
 @extends('layouts.plantilla')
 
 @section('titulo', 'Ver Estudiante')

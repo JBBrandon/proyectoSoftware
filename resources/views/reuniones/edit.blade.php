@@ -1,4 +1,6 @@
+@extends('adminlte::page')
 @extends('layouts.plantilla')
+
 
 @section('titulo', 'Editar Reunión')
 

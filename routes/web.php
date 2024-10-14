@@ -8,9 +8,13 @@ use App\Http\Controllers\ReunionController;
 use App\Http\Controllers\SeguimientoController;
 use App\Http\Controllers\PlanController;
 
-Route::get('/', HomeController::class)->name('home');
-Route::view('nosotros','nosotros')->name('nosotros'); 
+Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
+Route::get('/admin', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin.home')->middleware('auth');
+Route::view('nosotros','nosotros')->name('nosotros')->middleware('auth'); 
+
+ 
 
 
 
@@ -77,4 +81,6 @@ Route::controller(EstudianteController::class)->group(function () {
     Route::get('estudiantes/{estudiante}/edit', 'edit')->name('estudiantes.edit');
     Route::put('estudiantes/{estudiante}', 'update')->name('estudiantes.update');
 });
+
+
 

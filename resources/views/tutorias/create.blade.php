@@ -1,4 +1,4 @@
-
+@extends('adminlte::page')
 @extends('layouts.plantilla')
 
 @section('titulo', 'Registrar nuevo Tutor')

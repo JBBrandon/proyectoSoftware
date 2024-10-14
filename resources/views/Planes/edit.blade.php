@@ -1,4 +1,5 @@
 <!-- resources/views/planes/edit.blade.php -->
+@extends('adminlte::page')
 @extends('layouts.plantilla')
 
 @section('titulo', 'Editar Plan')

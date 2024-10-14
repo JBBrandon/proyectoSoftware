@@ -12,14 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('planes', function (Blueprint $table) {
-            $table->id();
+            $table->id(); // Esto crea un BIGINT UNSIGNED
             $table->string('idPlanes');
             $table->string('titulo');
             $table->text('descripcion');
             $table->string('estado');
-            $table->foreignId('tutor_id')->constrained('tutores')->onDelete('cascade'); // Esto genera una columna bigint(20) unsigned
+            $table->foreignId('tutor_id')->constrained('tutores')->onDelete('cascade'); // Asegúrate de que tutor_id es BIGINT UNSIGNED
             $table->timestamps();
         });
+        
         
         
     }
