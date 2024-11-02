@@ -52,10 +52,13 @@ class ReunionController extends Controller
     }
 
     // Mostrar el formulario para editar una reunión existente
-    public function edit($id)
-    {
-        $reunion = Reunion::find($id);
-        return view('reuniones.edit', compact('reunion'));
+    public function edit(Reunion $reuniones){
+        return view('reuniones.edit', compact('reuniones'));
+    }
+
+    public function destroy(Reunion $reuniones){
+        $reuniones->delete();
+        return redirect()->route('reuniones.index');
     }
 
     // Actualizar los datos de una reunión existente

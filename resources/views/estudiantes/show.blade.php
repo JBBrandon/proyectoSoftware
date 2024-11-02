@@ -13,4 +13,9 @@
     <p><strong>ID Estudiante: </strong>{{ $estudiante->idEstudiantes }}</p>
     <p><strong>Email: </strong>{{ $estudiante->email }}</p>
     <p><strong>Teléfono: </strong>{{ $estudiante->telefono }}</p>
+    <form action="{{route('estudiantes.destroy', $estudiante)}}" method="POST">
+        @csrf
+        @method('delete')
+        <button type="submmit">Eliminar</button>
+    </form>
 @endsection

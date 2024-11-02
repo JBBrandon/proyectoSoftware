@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Seguimiento;
+use Database\Factories\SeguimientoFactory;
 
 class SeguimientoController extends Controller
 {
@@ -52,6 +53,10 @@ class SeguimientoController extends Controller
     // Mostrar la vista para editar un seguimiento existente
     public function edit(Seguimiento $seguimiento){
         return view('seguimientos.edit', compact('seguimiento'));
+    }
+    public function destroy(Seguimiento $seguimiento){
+        $seguimiento->delete();
+        return redirect()->route('seguimientos.index');
     }
 
     // Actualizar los datos de un seguimiento

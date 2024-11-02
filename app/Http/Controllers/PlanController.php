@@ -42,15 +42,17 @@ class PlanController extends Controller
     // Método para mostrar los detalles de un plan específico
     public function show($id) {
         $plan = Plan::find($id);
-        if (!$plan) {
-            return redirect()->route('planes.index')->withErrors('Plan no encontrado');
-        }
         return view('planes.show', compact('plan'));
     }
 
     // Método para mostrar el formulario de edición de un plan
     public function edit(Plan $plan) {
         return view('planes.edit', compact('plan'));
+    }
+
+    public function destroy(Plan $plan){
+        $plan->delete();
+        return redirect()->route('planes.index');
     }
 
     // Método para actualizar los datos de un plan existente

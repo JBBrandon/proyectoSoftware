@@ -52,6 +52,11 @@ class EstudianteController extends Controller
         return view('estudiantes.edit', compact('estudiante'));
     }
 
+    public function destroy(Estudiante $estudiante){
+        $estudiante->delete();
+        return redirect()->route('estudiantes.index');
+    }
+
     // Actualizar los datos de un estudiante
     public function update(Request $request, Estudiante $estudiante)
     {

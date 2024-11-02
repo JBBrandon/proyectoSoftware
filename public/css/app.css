@@ -34,46 +34,38 @@ nav ul {
     list-style-type: none;
     padding: 0;
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los enlaces */
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+    display: inline-block;
 }
 
 nav ul li a {
-    color: white;
-    background-color: #3490dc;
+    color: #FFFFFF; /* Texto blanco */
+    background-color: #007bff; /* Fondo azul visible */
     padding: 10px 20px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    font-weight: bold; /* Negrita para mejor visibilidad */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #1d72b8;
+    background-color: #0056b3; /* Azul más oscuro en hover */
+    transform: scale(1.05); /* Efecto de hover con aumento */
 }
 
 /* Main Content */
 main {
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 900px; /* Ancho máximo */
+    margin: 20px auto;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-
-h2 {
-    margin-bottom: 20px;
-}
-
-ul {
-    padding-left: 20px;
-}
-
-ul li {
-    margin-bottom: 10px;
 }
 
 /* Formulario */
@@ -83,11 +75,6 @@ form {
     gap: 15px;
     max-width: 600px;
     margin: 0 auto;
-}
-
-label {
-    font-weight: bold;
-    margin-bottom: 5px;
 }
 
 input[type="text"],
@@ -130,7 +117,6 @@ footer {
     background-color: #2c3e50;
     color: white;
     padding: 15px;
-    margin-top: 20px;
     position: relative;
     bottom: 0;
     width: 100%;
@@ -140,15 +126,23 @@ footer p {
     margin: 0;
 }
 
+/* Estilo para el botón de colapso de menú en pantallas pequeñas */
+button.navbar-toggler {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 10px 0;
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
     }
 
     main {
-        padding: 10px;
+        padding: 15px;
     }
 
     form {

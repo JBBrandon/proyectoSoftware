@@ -10,8 +10,8 @@
     <h2>Integrantes del Grupo</h2>
     <ul>
         <li><strong>Edison Willian Costillo</strong></li>
-        <li><strong>Nombre del Segundo Integrante</strong></li>
-        <li><strong>Nombre del Tercer Integrante</strong></li>
+        <li><strong>Jerry Brandon Cruz Mamani</strong></li>
+        <li><strong>Alejandro Humberto Guevara Valdivia</strong></li>
     </ul>
 
     <p>Cada uno de nosotros tiene un papel fundamental en el desarrollo del proyecto, aportando habilidades y conocimientos para alcanzar los objetivos.</p>

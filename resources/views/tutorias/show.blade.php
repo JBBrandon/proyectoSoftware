@@ -11,7 +11,7 @@
     <a href="{{route('tutorias.index')}}">Volver a Tutoria</a>
     <a href="{{route('tutorias.edit', $tutores)}}">Editar registro</a>
     <p><strong>Código: {{$tutores->idTutores}}</strong></p>
-    <form action="{{route('tutorias.destroy', $tutores)}}">
+    <form action="{{route('tutorias.destroy', $tutores)}}" method="POST">
         @csrf
         @method('delete')
         <button type="submmit">Eliminar</button>

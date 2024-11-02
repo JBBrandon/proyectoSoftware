@@ -4,38 +4,38 @@
 @section('titulo', 'Listado de Reuniones')
 
 @section('contenido')
-    <h2>Listado de Reuniones</h2>
-    
-    <a href="{{ route('reuniones.create') }}">Crear Nueva Reunión</a>
+<h2>Listado de Reuniones</h2>
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID Reunión</th>
-                <th>Tutor</th>
-                <th>Estudiante</th>
-                <th>Fecha de Reunión</th>
-                <th>Detalles</th>
-                <th>Estado</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($reuniones as $Reunion)
-                <tr>
-                    <td>{{ $Reunion->idReuniones }}</td>
-                    <td>{{ $Reunion->tutor_id }}</td>
-                    <td>{{ $Reunion->estudiante_id }}</td>
-                    <td>{{ $Reunion->fecha_reunion }}</td>
-                    <td>{{ $Reunion->detalles }}</td>
-                    <td>{{ $Reunion->estado }}</td>
-                    <td>
-                        <a href="{{ route('reuniones.show', $Reunion->id) }}">Ver</a>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+<a href="{{ route('reuniones.create') }}" class="btn btn-primary mb-3">Crear Nueva Reunión</a>
 
-    {{ $reuniones->links() }} <!-- Paginación -->
+<table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID Reunión</th>
+            <th>Tutor</th>
+            <th>Estudiante</th>
+            <th>Fecha de Reunión</th>
+            <th>Detalles</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($reuniones as $reunion)
+        <tr>
+            <td>{{ $reunion->idReuniones }}</td>
+            <td>{{ $reunion->tutor_id }}</td>
+            <td>{{ $reunion->estudiante_id }}</td>
+            <td>{{ $reunion->fecha_reunion }}</td>
+            <td>{{ $reunion->detalles }}</td>
+            <td>{{ $reunion->estado }}</td>
+            <td>
+                <a href="{{ route('reuniones.show', $reunion->id) }}" class="btn btn-warning">Ver</a>
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
+
+{{ $reuniones->links() }} <!-- Paginación -->
 @endsection

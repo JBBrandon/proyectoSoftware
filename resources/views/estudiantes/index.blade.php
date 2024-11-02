@@ -6,9 +6,9 @@
 @section('contenido')
     <h2>Listado de Estudiantes</h2>
 
-    <a href="{{ route('estudiantes.create') }}">Crear Nuevo Estudiante</a>
+    <a href="{{ route('estudiantes.create') }}" class="btn btn-primary mb-3">Crear Nuevo Estudiante</a>
 
-    <table>
+    <table class="table table-bordered table-hover">
         <thead>
             <tr>
                 <th>ID Estudiante</th>
@@ -26,12 +26,16 @@
                     <td>{{ $estudiante->email }}</td>
                     <td>{{ $estudiante->telefono }}</td>
                     <td>
-                        <a href="{{ route('estudiantes.show', $estudiante->id) }}">Ver</a>
+                        <a href="{{ route('estudiantes.show', $estudiante->id) }}" class="btn btn-warning">Ver</a>
+                        <a href="{{ route('estudiantes.edit', $estudiante->id) }}" class="btn btn-primary">Editar</a>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
 
-    {{ $estudiantes->links() }} <!-- Paginación -->
+    <div class="d-flex justify-content-center">
+        {{ $estudiantes->links() }} <!-- Paginación -->
+    </div>
+
 @endsection

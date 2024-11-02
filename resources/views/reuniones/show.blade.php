@@ -14,4 +14,9 @@
 
     <a href="{{ route('reuniones.index') }}">Volver a la lista de reuniones</a>
     <a href="{{ route('reuniones.edit', $reuniones) }}">Editar Reunión</a>
+    <form action="{{route('reuniones.destroy', $reuniones)}}" method="POST">
+        @csrf
+        @method('delete')
+        <button type="submmit">Eliminar</button>
+    </form>
 @endsection

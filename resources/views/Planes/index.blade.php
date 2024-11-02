@@ -1,21 +1,38 @@
 @extends('adminlte::page')
 @extends('layouts.plantilla')
 
-@section('titulo', 'Página Principal')
+@section('titulo', 'Listado de Planes')
 
 @section('contenido')
-    
-    
-    <h2>Bienvenido a la página principal de Planes de Tutorías</h2>
-    <p>Desde aquí puedes gestionar las funciones de los Planes.</p>
 
-    <a href="{{route('planes.create')}}">Nuevo registro</a>
-    <ul>
-        @foreach($planes as $Plan)
-            <li>
-             <a href="{{route('planes.show' , $Plan->idPlanes)}}">{{$Plan->nombre}}</a>
-            </li>
-        @endforeach
-    </ul>
-    {{$planes->links()}}
+    <h2>Listado de Planes de Tutorías</h2>
+    <a href="{{route('planes.create')}}" class="btn btn-primary mb-3">Nuevo registro</a>
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>ID Plan</th>
+                <th>Titulo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($planes as $plan)
+                <tr>
+                    <td>{{ $plan->idPlanes }}</td>
+                    <td>{{ $plan->titulo }}</td>
+                    <td>
+                        <a href="{{route('planes.show', $plan)}}" class="btn btn-warning">Ver</a>
+                        <a href="{{route('planes.edit', $plan)}}" class="btn btn-primary">Editar</a>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-center">
+        {{ $planes->links() }} <!-- Paginación -->
+    </div>
+
 @endsection
+

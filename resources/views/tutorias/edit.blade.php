@@ -4,7 +4,7 @@
 @section('titulo', 'Registrar nuevo Tutor')
 
 @section('contenido')
-    <link rel="stylesheet" href="{{ asset('css/createTutor.css') }}">
+    
 
     <h1>Editar un Tutor</h1>
 
