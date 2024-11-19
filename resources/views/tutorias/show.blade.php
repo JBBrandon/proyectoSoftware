@@ -4,7 +4,7 @@
 
 @section('titulo', 'Ver Plan de Tutoría')
 
-@section('contenido')
+@section('content_header')
     <link rel="stylesheet" href="{{ asset('css/verPlan.css') }}">
 
     <h1>Se encontro el registro: {{$tutores->nombre}}</h1>

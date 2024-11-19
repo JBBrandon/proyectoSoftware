@@ -3,7 +3,7 @@
 
 @section('titulo', 'Crear Nueva Reunión')
 
-@section('contenido')
+@section('content_header')
     <h2>Crear Nueva Reunión</h2>
 
     <form action="{{ route('reuniones.store') }}" method="POST">

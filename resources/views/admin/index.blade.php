@@ -6,6 +6,6 @@
     <h1>Dashboard  </h1>
 @stop    
 
-@section('content')
+@section('contenido')
     <p>Bienvenido al panel de Gestion de Tutoria</p>
 @stop

@@ -3,7 +3,7 @@
 
 @section('titulo', 'Ver Seguimiento')
 
-@section('contenido')
+@section('content_header')
     <h1>Se encontró el registro: {{ $seguimiento->idSeguimientos }}</h1>
 
     <a href="{{ route('seguimientos.index') }}">Volver a Seguimientos</a>

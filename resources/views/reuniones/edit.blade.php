@@ -4,7 +4,7 @@
 
 @section('titulo', 'Editar Reunión')
 
-@section('contenido')
+@section('content_header')
     
 
 <form action="{{ route('reuniones.update', $reuniones) }}" method="POST">

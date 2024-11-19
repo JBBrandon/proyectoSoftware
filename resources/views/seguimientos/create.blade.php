@@ -3,7 +3,7 @@
 
 @section('titulo', 'Registrar nuevo Seguimiento')
 
-@section('contenido')
+@section('content_header')
     <h1>Registrar un nuevo Seguimiento</h1>
 
     <form action="{{ route('seguimientos.store') }}" method="POST">

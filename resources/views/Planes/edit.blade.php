@@ -4,7 +4,7 @@
 
 @section('titulo', 'Editar Plan')
 
-@section('contenido')
+@section('content_header')
     <h2>Editar Plan</h2>
     
     <form action="{{ route('planes.update', $plan) }}" method="POST">

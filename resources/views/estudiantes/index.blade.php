@@ -3,7 +3,8 @@
 
 @section('titulo', 'Listado de Estudiantes')
 
-@section('contenido')
+@section('content_header')
+
     <h2>Listado de Estudiantes</h2>
 
     <a href="{{ route('estudiantes.create') }}" class="btn btn-primary mb-3">Crear Nuevo Estudiante</a>

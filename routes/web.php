@@ -8,6 +8,9 @@ use App\Http\Controllers\ReunionController;
 use App\Http\Controllers\SeguimientoController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\ContactanosController;
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
 
 Auth::routes();
 
@@ -15,7 +18,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin.home')->middleware('auth');
 Route::view('nosotros','nosotros')->name('nosotros')->middleware('auth'); 
 Route::resource('usuarios', UserController::class)->middleware('auth:sanctum');
- 
+Route::get('contactanos', [ContactanosController::class, 'index'])->name('contactanos.index')->middleware('auth');
+Route::post('contactanos', [ContactanosController::class, 'store'])->name('contactanos.store')->middleware('auth');
 
 
 

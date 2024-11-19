@@ -4,7 +4,7 @@
 
 @section('titulo', 'Detalles del Plan')
 
-@section('contenido')
+@section('content_header')
     <h1>Detalles del Plan: {{ $plan->titulo}}</h1>
     
     <a href="{{ route('planes.index') }}">Volver</a>

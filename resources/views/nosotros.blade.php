@@ -3,7 +3,7 @@
 
 @section('titulo', 'Nosotros')
 
-@section('contenido')
+@section('content_header')
     <h1>Nosotros</h1>
     <p>Somos un equipo de 3 integrantes que trabaja en este proyecto con dedicación y esfuerzo.</p>
 

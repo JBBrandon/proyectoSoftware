@@ -3,7 +3,7 @@
 
 @section('titulo', 'Registrar nuevo Tutor')
 
-@section('contenido')
+@section('content_header')
     <link rel="stylesheet" href="{{ asset('css/createTutor.css') }}">
 
     <h1>Registrar un nuevo Tutor</h1>

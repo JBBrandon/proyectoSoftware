@@ -4,7 +4,7 @@
 
 @section('titulo', 'Ver Estudiante')
 
-@section('contenido')
+@section('content_header')
     <h1>Se encontró el registro: {{ $estudiante->nombre }}</h1>
 
     <a href="{{ route('estudiantes.index') }}">Volver a Estudiantes</a>

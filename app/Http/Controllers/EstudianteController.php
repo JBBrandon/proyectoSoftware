@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Estudiante;
+use Illuminate\Validation\Rule;
+
 
 class EstudianteController extends Controller
 {
@@ -60,9 +62,12 @@ class EstudianteController extends Controller
     // Actualizar los datos de un estudiante
     public function update(Request $request, Estudiante $estudiante)
     {
-        // Validación de los campos
+        // Validación de los campos, ignorando el id del estudiante actual
         $request->validate([
-            'idEstudiantes' => 'required|unique:estudiantes' ,
+            'idEstudiantes' => [
+                'required',
+                Rule::unique('estudiantes')->ignore($estudiante->id),
+            ],
             'nombre' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'telefono' => 'required|string|max:20',
@@ -79,4 +84,6 @@ class EstudianteController extends Controller
         // Redireccionar a la vista del estudiante actualizado
         return redirect()->route('estudiantes.show', $estudiante);
     }
+    
+
 }

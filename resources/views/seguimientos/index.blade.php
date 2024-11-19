@@ -3,7 +3,7 @@
 
 @section('titulo', 'Listado de Seguimientos')
 
-@section('contenido')
+@section('content_header')
     <h2>Listado de Seguimientos</h2>
 
     <a href="{{ route('seguimientos.create') }}" class="btn btn-primary" style="margin-bottom: 20px;">Crear Nuevo Seguimiento</a>

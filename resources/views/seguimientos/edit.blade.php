@@ -3,7 +3,7 @@
 
 @section('titulo', 'Editar Seguimiento')
 
-@section('contenido')
+@section('content_header')
     <h1>Editar Seguimiento</h1>
 
     <form action="{{ route('seguimientos.update', $seguimiento) }}" method="POST">

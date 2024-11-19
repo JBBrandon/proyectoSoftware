@@ -3,7 +3,7 @@
 
 @section('titulo', 'Registrar nuevo Estudiante')
 
-@section('contenido')
+@section('content_header')
     <h1>Registrar un nuevo Estudiante</h1>
 
     <form action="{{ route('estudiantes.store') }}" method="POST">

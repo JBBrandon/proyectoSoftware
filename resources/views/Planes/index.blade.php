@@ -1,9 +1,10 @@
 @extends('adminlte::page')
+
 @extends('layouts.plantilla')
 
 @section('titulo', 'Listado de Planes')
 
-@section('contenido')
+@section('content_header')
 
     <h2>Listado de Planes de Tutorías</h2>
     <a href="{{route('planes.create')}}" class="btn btn-primary mb-3">Nuevo registro</a>

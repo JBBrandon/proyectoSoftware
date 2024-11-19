@@ -3,7 +3,7 @@
 
 @section('titulo', 'Detalles de la Reunión')
 
-@section('contenido')
+@section('content_header')
     <h2>Detalles de la Reunión: {{ $reuniones->idReuniones }}</h2>
 
     <p><strong>Tutor ID:</strong> {{ $reuniones->tutor_id }}</p>

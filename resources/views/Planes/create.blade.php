@@ -5,7 +5,7 @@
 
 @section('titulo', 'Crear Plan')
 
-@section('contenido')
+@section('content_header')
     <h2>Crear Plan</h2>
     <form action="{{ route('planes.store') }}" method="POST">
         @csrf

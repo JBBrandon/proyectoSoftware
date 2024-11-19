@@ -3,7 +3,7 @@
 
 @section('titulo', 'Registrar nuevo Tutor')
 
-@section('contenido')
+@section('content_header')
     
 
     <h1>Editar un Tutor</h1>

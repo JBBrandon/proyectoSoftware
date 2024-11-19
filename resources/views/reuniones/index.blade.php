@@ -3,7 +3,7 @@
 
 @section('titulo', 'Listado de Reuniones')
 
-@section('contenido')
+@section('content_header')
 <h2>Listado de Reuniones</h2>
 
 <a href="{{ route('reuniones.create') }}" class="btn btn-primary mb-3">Crear Nueva Reunión</a>
