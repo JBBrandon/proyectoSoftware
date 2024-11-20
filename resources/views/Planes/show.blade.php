@@ -1,10 +1,12 @@
 <!-- resources/views/planes/show.blade.php -->
 @extends('adminlte::page')
-@extends('layouts.plantilla')
+
 
 @section('titulo', 'Detalles del Plan')
 
 @section('content_header')
+@include('layouts.partials.header')
+
     <h1>Detalles del Plan: {{ $plan->titulo}}</h1>
     
     <a href="{{ route('planes.index') }}">Volver</a>
@@ -15,4 +17,6 @@
         @method('delete')
         <button type="submmit">Eliminar</button>
     </form>
+    @include('layouts.partials.footer')
+
 @endsection

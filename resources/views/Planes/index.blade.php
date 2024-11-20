@@ -1,10 +1,12 @@
 @extends('adminlte::page')
 
-@extends('layouts.plantilla')
+
 
 @section('titulo', 'Listado de Planes')
 
 @section('content_header')
+@include('layouts.partials.header')
+
 
     <h2>Listado de Planes de Tutorías</h2>
     <a href="{{route('planes.create')}}" class="btn btn-primary mb-3">Nuevo registro</a>
@@ -34,6 +36,8 @@
     <div class="d-flex justify-content-center">
         {{ $planes->links() }} <!-- Paginación -->
     </div>
+    @include('layouts.partials.footer')
+
 
 @endsection
 

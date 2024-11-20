@@ -1,10 +1,12 @@
 <!-- resources/views/tutorias/verPlan.blade.php -->
 @extends('adminlte::page')
-@extends('layouts.plantilla')
+
 
 @section('titulo', 'Ver Plan de Tutoría')
 
 @section('content_header')
+@include('layouts.partials.header')
+
     <link rel="stylesheet" href="{{ asset('css/verPlan.css') }}">
 
     <h1>Se encontro el registro: {{$tutores->nombre}}</h1>
@@ -16,5 +18,6 @@
         @method('delete')
         <button type="submmit">Eliminar</button>
     </form>
-    
+    @include('layouts.partials.footer')
+
 @endsection

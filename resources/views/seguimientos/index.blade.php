@@ -1,9 +1,11 @@
 @extends('adminlte::page')
-@extends('layouts.plantilla')
+
 
 @section('titulo', 'Listado de Seguimientos')
 
 @section('content_header')
+@include('layouts.partials.header')
+
     <h2>Listado de Seguimientos</h2>
 
     <a href="{{ route('seguimientos.create') }}" class="btn btn-primary" style="margin-bottom: 20px;">Crear Nuevo Seguimiento</a>
@@ -36,5 +38,7 @@
     </table>
 
     {{ $seguimientos->links() }} <!-- Paginación -->
+    @include('layouts.partials.footer')
+
 @endsection
 

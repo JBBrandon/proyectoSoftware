@@ -1,9 +1,11 @@
 @extends('adminlte::page')
-@extends('layouts.plantilla')
+
 
 @section('titulo', 'Editar Seguimiento')
 
 @section('content_header')
+@include('layouts.partials.header')
+
     <h1>Editar Seguimiento</h1>
 
     <form action="{{ route('seguimientos.update', $seguimiento) }}" method="POST">
@@ -33,4 +35,6 @@
         <!-- Botón para guardar el formulario -->
         <button type="submit">Editar Seguimiento</button>
     </form>
+    @include('layouts.partials.footer')
+
 @endsection

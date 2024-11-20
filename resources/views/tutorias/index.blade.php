@@ -1,9 +1,11 @@
 @extends('adminlte::page')
-@extends('layouts.plantilla')
+
 
 @section('titulo', 'Página Principal')
 
 @section('content_header')
+@include('layouts.partials.header')
+
     <p >Desde aquí puedes gestionar las funciones de tutoría.</p>
 
     <div >
@@ -35,5 +37,6 @@
     </table>
     
 
-    
+    @include('layouts.partials.footer')
+
 @endsection

@@ -1,9 +1,11 @@
 @extends('adminlte::page')
-@extends('layouts.plantilla')
+
 
 @section('titulo', 'Registrar nuevo Tutor')
 
 @section('content_header')
+@include('layouts.partials.header')
+
     
 
     <h1>Editar un Tutor</h1>
@@ -30,4 +32,6 @@
         <!-- Botón para guardar el formulario -->
         <button type="submit">Editar Tutor</button>
     </form>
+    @include('layouts.partials.footer')
+
 @endsection

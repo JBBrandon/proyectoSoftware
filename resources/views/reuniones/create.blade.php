@@ -1,9 +1,11 @@
 @extends('adminlte::page')
-@extends('layouts.plantilla')
+
 
 @section('titulo', 'Crear Nueva Reunión')
 
 @section('content_header')
+@include('layouts.partials.header')
+
     <h2>Crear Nueva Reunión</h2>
 
     <form action="{{ route('reuniones.store') }}" method="POST">
@@ -29,6 +31,7 @@
         <button type="submit">Guardar Reunión</button>
     </form>
     
-    
+    @include('layouts.partials.footer')
+
     
 @endsection

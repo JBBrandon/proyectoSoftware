@@ -1,10 +1,10 @@
 
 @extends('adminlte::page')
-@extends('layouts.plantilla')
 
 @section('titulo', 'Ver Estudiante')
 
 @section('content_header')
+@include('layouts.partials.header')
     <h1>Se encontró el registro: {{ $estudiante->nombre }}</h1>
 
     <a href="{{ route('estudiantes.index') }}">Volver a Estudiantes</a>
@@ -18,4 +18,6 @@
         @method('delete')
         <button type="submmit">Eliminar</button>
     </form>
+@include('layouts.partials.footer')
+    
 @endsection

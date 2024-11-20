@@ -1,9 +1,10 @@
 @extends('adminlte::page')
-@extends('layouts.plantilla')
+
 
 @section('titulo', 'Registrar nuevo Estudiante')
 
 @section('content_header')
+@include('layouts.partials.header')
     <h1>Registrar un nuevo Estudiante</h1>
 
     <form action="{{ route('estudiantes.store') }}" method="POST">
@@ -28,4 +29,5 @@
         <!-- Botón para guardar el formulario -->
         <button type="submit">Registrar Estudiante</button>
     </form>
+@include('layouts.partials.footer')
 @endsection

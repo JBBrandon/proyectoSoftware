@@ -1,9 +1,11 @@
 @extends('adminlte::page')
-@extends('layouts.plantilla')
+
 
 @section('titulo', 'Registrar nuevo Seguimiento')
 
 @section('content_header')
+@include('layouts.partials.header')
+
     <h1>Registrar un nuevo Seguimiento</h1>
 
     <form action="{{ route('seguimientos.store') }}" method="POST">
@@ -32,4 +34,6 @@
         <!-- Botón para guardar el formulario -->
         <button type="submit">Registrar Seguimiento</button>
     </form>
+    @include('layouts.partials.footer')
+
 @endsection

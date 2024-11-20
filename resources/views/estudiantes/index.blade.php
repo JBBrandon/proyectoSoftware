@@ -1,10 +1,9 @@
 @extends('adminlte::page')
-@extends('layouts.plantilla')
 
 @section('titulo', 'Listado de Estudiantes')
 
 @section('content_header')
-
+@include('layouts.partials.header')
     <h2>Listado de Estudiantes</h2>
 
     <a href="{{ route('estudiantes.create') }}" class="btn btn-primary mb-3">Crear Nuevo Estudiante</a>
@@ -38,5 +37,7 @@
     <div class="d-flex justify-content-center">
         {{ $estudiantes->links() }} <!-- Paginación -->
     </div>
+@include('layouts.partials.footer')
+    
 
 @endsection

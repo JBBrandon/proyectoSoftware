@@ -1,9 +1,11 @@
 @extends('adminlte::page')
-@extends('layouts.plantilla')
+
 
 @section('titulo', 'Detalles de la Reunión')
 
 @section('content_header')
+@include('layouts.partials.header')
+
     <h2>Detalles de la Reunión: {{ $reuniones->idReuniones }}</h2>
 
     <p><strong>Tutor ID:</strong> {{ $reuniones->tutor_id }}</p>
@@ -19,4 +21,6 @@
         @method('delete')
         <button type="submmit">Eliminar</button>
     </form>
+    @include('layouts.partials.footer')
+
 @endsection

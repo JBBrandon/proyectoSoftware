@@ -1,10 +1,12 @@
 <!-- resources/views/planes/edit.blade.php -->
 @extends('adminlte::page')
-@extends('layouts.plantilla')
+
 
 @section('titulo', 'Editar Plan')
 
 @section('content_header')
+@include('layouts.partials.header')
+
     <h2>Editar Plan</h2>
     
     <form action="{{ route('planes.update', $plan) }}" method="POST">
@@ -28,4 +30,6 @@
 
         <button type="submit">Actualizar Plan</button>
     </form>
+    @include('layouts.partials.footer')
+
 @endsection

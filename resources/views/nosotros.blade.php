@@ -1,9 +1,11 @@
 @extends('adminlte::page')
-@extends('layouts.plantilla')
+
 
 @section('titulo', 'Nosotros')
 
 @section('content_header')
+@include('layouts.partials.header')
+
     <h1>Nosotros</h1>
     <p>Somos un equipo de 3 integrantes que trabaja en este proyecto con dedicación y esfuerzo.</p>
 
@@ -15,4 +17,6 @@
     </ul>
 
     <p>Cada uno de nosotros tiene un papel fundamental en el desarrollo del proyecto, aportando habilidades y conocimientos para alcanzar los objetivos.</p>
+    @include('layouts.partials.footer')
+
 @endsection

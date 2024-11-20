@@ -1,11 +1,10 @@
 <!-- resources/views/planes/create.blade.php -->
 @extends('adminlte::page')
-@extends('layouts.plantilla')
-
-
 @section('titulo', 'Crear Plan')
 
 @section('content_header')
+@include('layouts.partials.header')
+
     <h2>Crear Plan</h2>
     <form action="{{ route('planes.store') }}" method="POST">
         @csrf
@@ -27,4 +26,6 @@
 
         <button type="submit">Guardar Plan</button>
     </form>
+    @include('layouts.partials.footer')
+
 @endsection

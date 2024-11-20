@@ -1,9 +1,10 @@
 @extends('adminlte::page')
-@extends('layouts.plantilla')
+
 
 @section('title', 'Contactanos')
 
 @section('content_header')
+@include('layouts.partials.header')
     <h1>Dejanos un mensaje</h1>
     
     <form action="{{route('contactanos.store')}}" method="POST">
@@ -46,4 +47,5 @@
             Enviar Mensaje
         </button>
     </form>
+@include('layouts.partials.footer')
 @endsection
