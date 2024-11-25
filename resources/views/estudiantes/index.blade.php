@@ -3,41 +3,51 @@
 @section('titulo', 'Listado de Estudiantes')
 
 @section('content_header')
-@include('layouts.partials.header')
-    <h2>Listado de Estudiantes</h2>
+    @include('layouts.partials.header')
+    <h2 class="text-2xl font-semibold mb-4">Listado de Estudiantes</h2>
 
-    <a href="{{ route('estudiantes.create') }}" class="btn btn-primary mb-3">Crear Nuevo Estudiante</a>
+    <a href="{{ route('estudiantes.create') }}" class="btn btn-primary mb-3 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Crear Nuevo Estudiante</a>
+    
+@endsection
 
-    <table class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>ID Estudiante</th>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>Teléfono</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($estudiantes as $estudiante)
-                <tr>
-                    <td>{{ $estudiante->idEstudiantes }}</td>
-                    <td>{{ $estudiante->nombre }}</td>
-                    <td>{{ $estudiante->email }}</td>
-                    <td>{{ $estudiante->telefono }}</td>
-                    <td>
-                        <a href="{{ route('estudiantes.show', $estudiante->id) }}" class="btn btn-warning">Ver</a>
-                        <a href="{{ route('estudiantes.edit', $estudiante->id) }}" class="btn btn-primary">Editar</a>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-
-    <div class="d-flex justify-content-center">
-        {{ $estudiantes->links() }} <!-- Paginación -->
+@section('content')
+    <div class="min-h-screen flex justify-center items-center">
+        <div class="w-full max-w-6xl bg-white p-6 rounded-lg shadow-lg">
+            <table class="able-auto w-full border-collapse border border-gray-300">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2 border border-gray-300 bg-gray-100">ID Estudiante</th>
+                        <th class="px-4 py-2 border border-gray-300 bg-gray-100">Nombre</th>
+                        <th class="px-4 py-2 border border-gray-300 bg-gray-100">Email</th>
+                        <th class="px-4 py-2 border border-gray-300 bg-gray-100">Teléfono</th>
+                        <th class="px-4 py-2 border border-gray-300 bg-gray-100">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($estudiantes as $estudiante)
+                        <tr>
+                            <td class="px-4 py-2 border border-gray-300">{{ $estudiante->idEstudiantes }}</td>
+                            <td class="px-4 py-2 border border-gray-300">{{ $estudiante->nombre }}</td>
+                            <td class="px-4 py-2 border border-gray-300">{{ $estudiante->email }}</td>
+                            <td class="px-4 py-2 border border-gray-300">{{ $estudiante->telefono }}</td>
+                            <td class="px-4 py-2 border border-gray-300">
+                                <a href="{{ route('estudiantes.show', $estudiante->id) }}" class="btn btn-warning px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Ver</a>
+                                <a href="{{ route('estudiantes.edit', $estudiante->id) }}" class="btn btn-primary px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Editar</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+        
     </div>
-@include('layouts.partials.footer')
     
 
+    <div class="flex justify-center mt-4">
+        {{ $estudiantes->links() }} <!-- Paginación -->
+    </div>
+    @include('layouts.partials.footer')
 @endsection
+
+
+

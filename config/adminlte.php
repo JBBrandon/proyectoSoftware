@@ -321,7 +321,7 @@ return [
             'can' => 'manage-blog',
         ],
         [
-            'text' => 'Dashboard',
+            'text' => 'Inicio',
             'route'=> 'admin.home'
         ],
         [
@@ -353,14 +353,6 @@ return [
                             'url' => 'estudiantes',
                         ],
                     ],
-                ],
-                [
-                    'text'=> 'Misionales',
-                    'url' => '#',
-                ],
-                [
-                    'text'=> 'De soporte',
-                    'url' => '#',
                 ],
             ],
         ],
