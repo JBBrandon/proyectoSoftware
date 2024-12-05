@@ -325,108 +325,24 @@ return [
             'route'=> 'admin.home'
         ],
         [
-            'text'=> 'Macroprocesos',
-            'icon'=> 'fas-fa-fw-fa-share',
-            'submenu'=>[
-                [
-                    'text'=> 'Estratégicos',
-                    'url' => '#',
-                    'submenu' => [
-                        [
-                            'text'=> 'Inducción a los tutores',
-                            'url' => 'tutorias',
-                        ],
-                        [
-                            'text'=> 'Informe de Plan de Tutoría',
-                            'url' => 'planes',
-                        ],
-                        [
-                            'text'=> 'Reuniones de tutoría personalizada',
-                            'url' => 'reuniones',
-                        ],
-                        [
-                            'text'=> 'Informes de seguimiento académico',
-                            'url' => 'seguimientos',
-                        ],
-                        [
-                            'text'=> 'Informes de Estudiantes académico',
-                            'url' => 'estudiantes',
-                        ],
-                    ],
-                ],
-            ],
+            'text'=> 'Inducción a los tutores',
+            'url' => 'tutorias',
         ],
         [
-            'text' => 'pages',
-            'url' => 'admin/pages',
-            'icon' => 'far fa-fw fa-file',
-            'label' => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text'=> 'Informe de Plan de Tutoría',
+            'url' => 'planes',
         ],
         [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text'=> 'Reuniones de tutoría personalizada',
+            'url' => 'reuniones',
         ],
         [
-            'text' => 'multilevel',
-            'icon' => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                        ],
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text' => 'important',
-            'icon_color' => 'red',
-            'url' => '#',
+            'text'=> 'Informes de seguimiento académico',
+            'url' => 'seguimientos',
         ],
         [
-            'text' => 'warning',
-            'icon_color' => 'yellow',
-            'url' => '#',
-        ],
-        [
-            'text' => 'information',
-            'icon_color' => 'cyan',
-            'url' => '#',
+            'text'=> 'Informes de Estudiantes académico',
+            'url' => 'estudiantes',
         ],
     ],
 

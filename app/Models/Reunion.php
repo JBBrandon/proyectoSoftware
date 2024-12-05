@@ -8,6 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Reunion extends Model
 {
     protected $table = 'reuniones';
+    protected $fillable = [
+        'idReuniones',  // Agregar idReuniones a los campos fillable
+        'tutor_id',
+        'estudiante_id',
+        'fecha_reunion',
+        'detalles',
+        'estado',
+    ];
     use HasFactory;
       // Relación inversa con el tutor (Muchas reuniones pertenecen a un tutor)
       public function tutor()

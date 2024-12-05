@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Reunion;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+
 
 class ReunionController extends Controller
 {
@@ -62,10 +64,13 @@ class ReunionController extends Controller
     }
 
     // Actualizar los datos de una reunión existente
-    public function update(Request $request, Reunion $reunion)
+    public function update(Request $request, Reunion $reuniones)
     {
         $request->validate([
-            'idReuniones' => 'required|unique:reuniones,idReuniones,' ,
+            'idReuniones' => [
+                'required',
+                Rule::unique('reuniones')->ignore($reuniones->id),  // Ignorar el idPlanes del plan actual
+            ],
             'tutor_id' => 'required|integer',
             'estudiante_id' => 'required|integer',
             'fecha_reunion' => 'required|date',
@@ -73,15 +78,15 @@ class ReunionController extends Controller
             'estado' => 'required|string|max:255',
         ]);
 
-        $reunion = new Reunion ;
-        $reunion->idReuniones = $request->idReuniones;
-        $reunion->tutor_id = $request->tutor_id;
-        $reunion->estudiante_id = $request->estudiante_id;
-        $reunion->fecha_reunion = $request->fecha_reunion;
-        $reunion->detalles = $request->detalles;
-        $reunion->estado = $request->estado;
-        $reunion->save();
+        $reuniones->update([
+            'idReuniones' => $request->idReuniones,
+            'tutor_id' => $request->tutor_id,
+            'estudiante_id' => $request->estudiante_id,
+            'fecha_reunion' => $request->fecha_reunion,
+            'detalles' => $request->detalles,
+            'estado' => $request->estado,
+        ]);
 
-        return redirect()->route('reuniones.show', $reunion);
+        return redirect()->route('reuniones.show', $reuniones);
     }
 }

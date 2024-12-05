@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Seguimiento;
 use Database\Factories\SeguimientoFactory;
+use Illuminate\Validation\Rule;
 
 class SeguimientoController extends Controller
 {
@@ -65,6 +66,10 @@ class SeguimientoController extends Controller
         // Validación de los campos
         $request->validate([
             'idSeguimientos' => 'required|unique:seguimientos',
+            'idSeguimientos' => [
+                'required',
+                Rule::unique('Seguimientos')->ignore($seguimiento->id),
+            ],
             'tutor_id' => 'required|integer',
             'estudiante_id' => 'required|integer',
             'informe' => 'required|string',

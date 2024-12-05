@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Plan;
+use Illuminate\Validation\Rule;
 
 class PlanController extends Controller
 {
@@ -28,20 +29,20 @@ class PlanController extends Controller
             'tutor_id' => 'required|integer', // ID del tutor debe ser un número entero
         ]);
 
-        $plan = new Plan;
-        $plan->idPlanes = $request->idPlanes; // Código del plan
-        $plan->titulo = $request->titulo;
-        $plan->descripcion = $request->descripcion;
-        $plan->estado = $request->estado;
-        $plan->tutor_id = $request->tutor_id; // Relación con el tutor
-        $plan->save();
+        $planes = new Plan;
+        $planes->idPlanes = $request->idPlanes; // Código del plan
+        $planes->titulo = $request->titulo;
+        $planes->descripcion = $request->descripcion;
+        $planes->estado = $request->estado;
+        $planes->tutor_id = $request->tutor_id; // Relación con el tutor
+        $planes->save();
 
-        return redirect()->route('planes.show', $plan);
+        return redirect()->route('planes.show', $planes);
     }
 
     // Método para mostrar los detalles de un plan específico
     public function show($id) {
-        $plan = Plan::find($id);
+        $plan = Plan::findOrFail($id);
         return view('planes.show', compact('plan'));
     }
 
@@ -56,23 +57,30 @@ class PlanController extends Controller
     }
 
     // Método para actualizar los datos de un plan existente
-    public function update(Request $request, Plan $plan) {
+    public function update(Request $request, Plan $plan)
+    {
+        // Validación de los campos, ignorando el id del plan actual
         $request->validate([
-            'idPlanes' => 'required|unique:planes,idPlanes,' ,
+            'idPlanes' => [
+                'required',
+                Rule::unique('planes')->ignore($plan->id),  // Ignorar el idPlanes del plan actual
+            ],
             'titulo' => 'required|string|max:255',
             'descripcion' => 'required|string',
             'estado' => 'required|string|max:255',
             'tutor_id' => 'required|integer',
         ]);
-        
-        $plan = new Plan;
-        $plan->idPlanes = $request->idPlanes; // Código del plan
-        $plan->titulo = $request->titulo;
-        $plan->descripcion = $request->descripcion;
-        $plan->estado = $request->estado;
-        $plan->tutor_id = $request->tutor_id; // Relación con el tutor
-        $plan->save();
 
+        // Actualizar el plan existente
+        $plan->update([
+            'idPlanes' => $request->idPlanes,
+            'titulo' => $request->titulo,
+            'descripcion' => $request->descripcion,
+            'estado' => $request->estado,
+            'tutor_id' => $request->tutor_id,
+        ]);
+
+        // Redirigir a la vista del plan actualizado
         return redirect()->route('planes.show', $plan);
     }
 }

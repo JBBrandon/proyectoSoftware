@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tutor;
+use Illuminate\Validation\Rule;
+
 
 class TutoriaController extends Controller
 {
@@ -37,24 +39,30 @@ class TutoriaController extends Controller
         return redirect()->route('tutorias.show', $tutor);
     }  
     
-    public function update(Request $request, Tutor $tutor)
+    public function update(Request $request, Tutor $tutores)
     {
+        // Validación de los campos, ignorando el idTutores del tutor actual
         $request->validate([
-            'idTutores' => 'required|unique:tutores', // Asegura que sea único
+            'idTutores' => [
+                'required',
+                Rule::unique('tutores')->ignore($tutores->id),  // Ignorar el idTutores del tutor actual
+            ],
             'nombre' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'telefono' => 'required|string|max:20',
         ]);
 
-        $tutor = new Tutor;
-        $tutor->idTutores = $request->idTutores;
-        $tutor->nombre = $request->nombre;
-        $tutor->email = $request->email;
-        $tutor->telefono = $request->telefono;
-        $tutor->save();
+        // Actualizar el tutor existente
+        $tutores->update([
+            'idTutores' => $request->idTutores,
+            'nombre' => $request->nombre,
+            'email' => $request->email,
+            'telefono' => $request->telefono,
+        ]);
 
-        return redirect()->route('tutorias.show', $tutor);
-    }   
+        // Redirigir a la vista del tutor actualizado
+        return redirect()->route('tutorias.show', $tutores);
+    }
 
     public function show($id) {
     

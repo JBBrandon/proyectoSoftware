@@ -18,8 +18,8 @@
     <a href="{{ route('reuniones.edit', $reuniones) }}">Editar Reunión</a>
     <form action="{{route('reuniones.destroy', $reuniones)}}" method="POST">
         @csrf
-        @method('delete')
-        <button type="submmit">Eliminar</button>
+        @method('DELETE')
+        <button type="submit">Eliminar</button>
     </form>
     @include('layouts.partials.footer')
 

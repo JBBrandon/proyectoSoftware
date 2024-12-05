@@ -81,4 +81,30 @@ class EstudianteTest extends TestCase
         // Verificar que la respuesta redirige a la vista de listado de estudiantes
         $response->assertRedirect(route('estudiantes.index'));
     }
+    /** @test */
+public function validacion_de_datos_requeridos()
+{
+    // Datos de prueba para un nuevo estudiante con campos faltantes
+    $data = [
+        'idEstudiantes' => 12345,  // El id no es necesario para el almacenamiento, se puede manejar automáticamente
+        'nombre' => '',            // Nombre vacío
+        'email' => '',             // Email vacío
+        'telefono' => '',          // Teléfono vacío
+    ];
+
+    // Enviar solicitud POST para almacenar un nuevo estudiante con datos inválidos
+    $response = $this->post('/estudiantes', $data);
+
+    // Verificar que la respuesta de la solicitud contiene errores de validación
+    $response->assertSessionHasErrors(['nombre', 'email', 'telefono']);
+
+    // Verificar que el estudiante no fue guardado en la base de datos
+    $this->assertDatabaseMissing('estudiantes', [
+        'idEstudiantes' => '12345',
+        'nombre' => '',
+        'email' => '',
+        'telefono' => '',
+    ]);
+}
+
 }

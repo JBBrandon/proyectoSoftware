@@ -11,7 +11,7 @@
     
     <form action="{{ route('planes.update', $plan) }}" method="POST">
         @csrf
-        @method('put')
+        @method('PUT')
 
         <label for="idPlanes">Código del Plan:</label>
         <input type="text" id="idPlanes" name="idPlanes" value="{{ $plan->idPlanes }}" required><br><br>

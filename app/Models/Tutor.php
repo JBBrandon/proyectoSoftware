@@ -9,6 +9,12 @@ class Tutor extends Model
 {
     protected $table = 'tutores';
     use HasFactory;
+    protected $fillable = [
+        'idTutores',  // Agregar idTutores aquí
+        'nombre',
+        'email',
+        'telefono',
+    ];
 
     // Relación uno a muchos con seguimientos (Un tutor tiene muchos seguimientos)
     public function seguimientos()
