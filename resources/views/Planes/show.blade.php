@@ -19,12 +19,18 @@
             <p><strong>Tutor:</strong> {{ $plan->tutor->name ?? 'No asignado' }}</p>
         </div>
         <div class="card-footer">
-            <a href="{{ route('planes.index') }}" class="btn btn-primary">Volver</a>
-            <a href="{{ route('planes.edit', $plan) }}" class="btn btn-warning">Editar Detalles</a>
+            <a href="{{ route('planes.index') }}" class="btn btn-primary">
+                <i class="fas fa-arrow-left"></i> Volver a la lista
+            </a>
+            <a href="{{ route('planes.edit', $plan) }}" class="btn btn-warning">
+                <i class="fas fa-edit"></i> Editar Detalles
+            </a>
             <form action="{{ route('planes.destroy', $plan) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de eliminar este plan?');">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger">Eliminar</button>
+                <button type="submit" class="btn btn-danger">
+                    <i class="fas fa-trash-alt"></i> Eliminar
+                </button>
             </form>
         </div>
     </div>

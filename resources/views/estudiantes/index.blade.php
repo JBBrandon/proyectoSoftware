@@ -13,19 +13,19 @@
 @section('content')
     <div class="min-h-screen flex justify-center items-center">
         <div class="w-full max-w-6xl bg-white p-6 rounded-lg shadow-lg">
-            <table class="able-auto w-full border-collapse border border-gray-300">
+            <table class="table-auto w-full border-collapse border border-gray-300">
                 <thead>
                     <tr>
-                        <th class="px-4 py-2 border border-gray-300 bg-gray-100">ID Estudiante</th>
-                        <th class="px-4 py-2 border border-gray-300 bg-gray-100">Nombre</th>
-                        <th class="px-4 py-2 border border-gray-300 bg-gray-100">Email</th>
-                        <th class="px-4 py-2 border border-gray-300 bg-gray-100">Teléfono</th>
-                        <th class="px-4 py-2 border border-gray-300 bg-gray-100">Acciones</th>
+                        <th class="px-4 py-2 border border-gray-300 bg-gray-100 text-left">ID Estudiante</th>
+                        <th class="px-4 py-2 border border-gray-300 bg-gray-100 text-left">Nombre</th>
+                        <th class="px-4 py-2 border border-gray-300 bg-gray-100 text-left">Email</th>
+                        <th class="px-4 py-2 border border-gray-300 bg-gray-100 text-left">Teléfono</th>
+                        <th class="px-4 py-2 border border-gray-300 bg-gray-100 text-left">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($estudiantes as $estudiante)
-                        <tr>
+                        <tr class="hover:bg-gray-50">
                             <td class="px-4 py-2 border border-gray-300">{{ $estudiante->idEstudiantes }}</td>
                             <td class="px-4 py-2 border border-gray-300">{{ $estudiante->nombre }}</td>
                             <td class="px-4 py-2 border border-gray-300">{{ $estudiante->email }}</td>
@@ -39,15 +39,13 @@
                 </tbody>
             </table>
         </div>
-        
     </div>
     
-
     <div class="flex justify-center mt-4">
         {{ $estudiantes->links() }} <!-- Paginación -->
     </div>
+
     @include('layouts.partials.footer')
 @endsection
-
 
 
