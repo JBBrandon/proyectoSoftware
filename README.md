@@ -7,47 +7,103 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Proyecto de Gestión de Tutorías
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Este es un proyecto de gestión de tutorías desarrollado con Laravel. Permite gestionar tutorías, planes, reuniones, seguimientos y estudiantes.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requisitos
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- PHP >= 7.3
+- Composer
+- Laravel >= 8.x
+- MySQL
 
-## Learning Laravel
+## Instalación
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Clona el repositorio:
+    ```bash
+    git clone https://github.com/tu-usuario/proyectoSoftware.git
+    ```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+2. Navega al directorio del proyecto:
+    ```bash
+    cd proyectoSoftware
+    ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3. Instala las dependencias de Composer:
+    ```bash
+    composer install
+    ```
 
-## Laravel Sponsors
+4. Copia el archivo `.env.example` a `.env` y configura tu base de datos:
+    ```bash
+    cp .env.example .env
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+5. Genera la clave de la aplicación:
+    ```bash
+    php artisan key:generate
+    ```
 
-### Premium Partners
+6. Ejecuta las migraciones de la base de datos:
+    ```bash
+    php artisan migrate
+    ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+7. Inicia el servidor de desarrollo:
+    ```bash
+    php artisan serve
+    ```
+
+## Uso
+
+### Autenticación
+
+El proyecto utiliza autenticación. Puedes registrarte y luego iniciar sesión para acceder a las funcionalidades.
+
+### Gestión de Tutorías
+
+- **Listar Tutorías:** Navega a `/tutorias` para ver todas las tutorías.
+- **Crear Tutoría:** Navega a `/tutorias/create` para crear una nueva tutoría.
+- **Ver Tutoría:** Navega a `/tutorias/{id}` para ver los detalles de una tutoría.
+- **Editar Tutoría:** Navega a `/tutorias/{id}/edit` para editar una tutoría.
+- **Eliminar Tutoría:** Puedes eliminar una tutoría desde la vista de detalles.
+
+### Gestión de Planes
+
+- **Listar Planes:** Navega a `/planes` para ver todos los planes.
+- **Crear Plan:** Navega a `/planes/create` para crear un nuevo plan.
+- **Ver Plan:** Navega a `/planes/{id}` para ver los detalles de un plan.
+- **Editar Plan:** Navega a `/planes/{id}/edit` para editar un plan.
+- **Eliminar Plan:** Puedes eliminar un plan desde la vista de detalles.
+
+### Gestión de Reuniones
+
+- **Listar Reuniones:** Navega a `/reuniones` para ver todas las reuniones.
+- **Crear Reunión:** Navega a `/reuniones/create` para crear una nueva reunión.
+- **Ver Reunión:** Navega a `/reuniones/{id}` para ver los detalles de una reunión.
+- **Editar Reunión:** Navega a `/reuniones/{id}/edit` para editar una reunión.
+- **Eliminar Reunión:** Puedes eliminar una reunión desde la vista de detalles.
+
+### Gestión de Seguimientos
+
+- **Listar Seguimientos:** Navega a `/seguimientos` para ver todos los seguimientos.
+- **Crear Seguimiento:** Navega a `/seguimientos/create` para crear un nuevo seguimiento.
+- **Ver Seguimiento:** Navega a `/seguimientos/{id}` para ver los detalles de un seguimiento.
+- **Editar Seguimiento:** Navega a `/seguimientos/{id}/edit` para editar un seguimiento.
+- **Eliminar Seguimiento:** Puedes eliminar un seguimiento desde la vista de detalles.
+
+### Gestión de Estudiantes
+
+- **Listar Estudiantes:** Navega a `/estudiantes` para ver todos los estudiantes.
+- **Crear Estudiante:** Navega a `/estudiantes/create` para crear un nuevo estudiante.
+- **Ver Estudiante:** Navega a `/estudiantes/{id}` para ver los detalles de un estudiante.
+- **Editar Estudiante:** Navega a `/estudiantes/{id}/edit` para editar un estudiante.
+- **Eliminar Estudiante:** Puedes eliminar un estudiante desde la vista de detalles.
+
+## Contacto
+
+Para cualquier consulta, puedes contactarnos a través de la página de contacto en `/contactanos`.
 
 ## Contributing
 
